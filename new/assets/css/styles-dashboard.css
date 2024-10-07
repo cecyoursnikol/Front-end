@@ -1,0 +1,85 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+.sidebar {
+    background-color: #f1f1f1;
+    height: 100vh;
+    padding: 20px;
+}
+.sidebar a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+}
+.sidebar a.active {
+    color: #007bff;
+    font-weight: bold;
+}
+.sidebar a:hover {
+    color: #007bff;
+}
+.sidebar .logout {
+    position: absolute;
+    bottom: 20px;
+}
+.content {
+    padding: 20px;
+}
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.card-header {
+    background-color: #fff;
+    border-bottom: none;
+    font-weight: bold;
+}
+.card-body {
+    padding: 20px;
+}
+.finance-chart {
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+}
+.standards-card {
+    background-color: #f8d7da;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+}
+.standards-card.active {
+    background-color: #f5c6cb;
+}
+.standards-card i {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.standards-card p {
+    margin: 0;
+}
+.festival-card {
+    background-color: #343a40;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.festival-card img {
+    border-radius: 10px;
+}
+.message-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.message-card img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}

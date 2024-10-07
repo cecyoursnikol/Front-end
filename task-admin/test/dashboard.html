@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Admin Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f7fa;
+    }
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      padding-top: 20px;
+      background-color: #343a40;
+      color: white;
+      transition: transform 0.3s ease;
+      transform: translateX(-100%);
+    }
+    .sidebar.show {
+      transform: translateX(0);
+    }
+    .main-content {
+      transition: margin-left 0.3s ease;
+      padding: 20px;
+      margin-left: 250px; /* Sidebar width */
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        position: fixed;
+        height: 100vh;
+        width: 250px;
+      }
+      .main-content {
+        margin-left: 0;
+      }
+      .sidebar-toggle {
+        display: inline-block;
+        z-index: 200;
+      }
+    }
+    .nav-link.active {
+      background-color: #007bff;
+      color: #fff;
+    }
+    .nav-link {
+      color: white;
+      transition: background-color 0.3s;
+    }
+    .nav-link:hover {
+      background-color: #007bff;
+    }
+    .stats-card {
+      transition: transform 0.3s;
+      background-color: #ffffff;
+      border: none;
+    }
+    .stats-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    .carousel-item {
+      background-color: #dc3545;
+      color: white;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .carousel-item h6 {
+      margin-bottom: 15px;
+    }
+    .festival-item {
+      background-color: #e9ecef;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .request {
+      background-color: #e9ecef;
+      margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="sidebar bg-dark" id="sidebar">
+        <h4 class="mt-4 text-center">Welcome,</h4>
+        <h5 class="text-center">Mr. Mahendra</h5>
+        <nav class="nav flex-column mt-5">
+          <a class="nav-link active" href="#" onclick="setActive(this)"> <i class="fas fa-tachometer-alt"></i> Dashboard</a>
+          <a class="nav-link" href="#" onclick="setActive(this)"> <i class="fas fa-user-graduate"></i> Students</a>
+          <a class="nav-link" href="#" onclick="setActive(this)"> <i class="fas fa-users"></i> Staff</a>
+          <a class="nav-link" href="#" onclick="setActive(this)"> <i class="fas fa-money-bill-wave"></i> Finance</a>
+          <a class="nav-link" href="#" onclick="setActive(this)"> <i class="fas fa-chart-line"></i> Reports</a>
+          <a class="nav-link" href="#" onclick="setActive(this)"> <i class="fas fa-book-open"></i> Academy</a>
+          <a class="nav-link" href="#" onclick="setActive(this)"> <i class="fas fa-calendar-alt"></i> Events</a>
+          <a class="nav-link" href="#" onclick="setActive(this)"> <i class="fas fa-cog"></i> Settings</a>
+          <a class="nav-link" href="#" onclick="setActive(this)"> <i class="fas fa-lock"></i> Permissions</a>
+        </nav>
+        <a href="#" class="nav-link mt-auto mb-4 logout"> <i class="fas fa-sign-out-alt"></i> Logout</a>
+      </div>
+
+      <div class="col-md-10 main-content">
+        <button class="btn btn-primary sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="d-flex justify-content-between align-items-center p-3">
+          <h3>Dashboard</h3>
+          <select class="form-select w-auto">
+            <option>2024</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <!-- Top Stats -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card p-3 stats-card animate__animated animate__fadeInUp">
+              <div class="d-flex align-items-center">
+                <h5>Students</h5>
+                <span class="ms-auto fs-4">2000</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card p-3 stats-card animate__animated animate__fadeInUp">
+              <div class="d-flex align-items-center">
+                <h5>Staff</h5>
+                <span class="ms-auto fs-4">100</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="card p-3 stats-card animate__animated animate__fadeInUp">
+              <div class="d-flex align-items-center">
+                <h5>Fees</h5>
+                <span class="ms-auto fs-4">5.6 Lac</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <!-- Finance Section -->
+          <div class="col-lg-6 mb-4">
+            <div class="card p-4 finance-card">
+              <h5>Finance</h5>
+              <div class="d-flex justify-content-center mt-4">
+                <div class="finance-chart" style="text-align:center;">
+                  <div class="fs-2">Expenses: 8.9 Lac</div>
+                  <div class="fs-2">Fees: 5.6 Lac</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Standards Section -->
+          <div class="col-lg-6 mb-4">
+            <div class="card p-4">
+              <h5>Standards</h5>
+              <div id="standardsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="standard-card text-center">
+                      <h6>Standard - 1</h6>
+                      <div>Students: 150</div>
+                      <div>Staff: 4</div>
+                      <div>Fees: 50k</div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="standard-card text-center">
+                      <h6>Standard - 2</h6>
+                      <div>Students: 250</div>
+                      <div>Staff: 5</div>
+                      <div>Fees: 80k</div>
+                    </div>
+                  </div>
+                  <div class="carousel-item">
+                    <div class="standard-card text-center">
+                      <h6>Standard - 3</h6>
+                      <div>Students: 200</div>
+                      <div>Staff: 4</div>
+                      <div>Fees: 70k</div>
+                    </div>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#standardsCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#standardsCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-lg-6 mb-4">
+            <div class="card p-3">
+              <h5>Festivals</h5>
+              <div class="festival-item">Gandhi Jayanti: <strong>02</strong></div>
+              <div class="festival-item">Navratri: <strong>03</strong></div>
+              <div class="festival-item">Dussehra: <strong>12</strong></div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mb-4">
+            <div class="card p-3">
+              <h5>Requests</h5>
+              <div class="request animate__animated animate__fadeInUp">
+                <h6>Sarad Pawar</h6>
+                <p>Hello sir, I am writing to formally request leave from 02/08 to 05/08 due to...</p>
+              </div>
+              <div class="request animate__animated animate__fadeInUp">
+                <h6>Mit Malhar</h6>
+                <p>Hello sir, I am writing to formally request leave from 02/08 to 05/08 due to...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function setActive(element) {
+      // Remove 'active' class from all links
+      var links = document.querySelectorAll('.nav-link');
+      links.forEach(link => link.classList.remove('active'));
+
+      // Add 'active' class to the clicked link
+      element.classList.add('active');
+    }
+
+    function toggleSidebar() {
+      var sidebar = document.getElementById("sidebar");
+      sidebar.classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
