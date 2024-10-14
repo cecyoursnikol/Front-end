@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture Tag in HTML</title>
+</head>
+<body>
+    
+
+    <!-- <img src="../img/image-11.jpg" alt="nothing" height="200px" width="400px"> -->
+
+
+    <picture>
+
+        <source media="(min-width:500px)" srcset="../img/image-1.jpg">
+
+        <source media="(min-width:200px)" srcset="../img/image-10.jpg">
+
+
+
+        <!-- default img -->
+        <img src="../img/image-11.jpg" alt="nothing" height="200px" width="400px">
+    </picture>
+</body>
+</html>
