@@ -1,0 +1,44 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    height: 70px;
+    width: 100%;
+    background-color: bisque;
+    /* padding: 20px; */
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.logo{
+    /* border: 1px solid black; */
+    width: 160px;
+    /* height: 40px; */
+    font-size: 2rem;
+    margin-top: 14px;
+    margin-left: 25px;
+    
+}
+
+.menu-list{
+    /* border: 1px solid black; */
+
+    margin-right: 50px;
+    margin-top: 20px;
+
+    font-size: 1.3rem;
+}
+
+ul{
+
+    display: flex;
+    gap: 20px;
+}
+
+li{
+    list-style: none;
+}
