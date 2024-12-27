@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower</title>
+
+    <style>
+
+
+        body{
+
+            background-color: black;
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .container{
+
+            height: 300px;
+            width: 300px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -150px 0 0 -150px;
+            /* border: 1px solid white; */
+        }
+
+        .square{
+
+            height: 95%;
+            width: 95%;
+            background-color: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -47% 0 0 -47%;
+        }
+
+        .black{
+            background-color: black;
+            /* border: 1px solid white; */
+            animation: rotate 10s infinite linear;
+        }
+
+        .circle:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .circle:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .circle:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+
+
+
+        @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+
+</head>
+<body>
+    <div class="container">
+
+
+        <div class="square black">
+        <div class="square">
+          <div class="square black">
+            <div class="square">
+              <div class="square black">
+                <div class="square">
+                  <div class="square black">
+                    <div class="square">
+                      <div class="square black">
+                        <div class="square">
+                          <div class="square black">
+                            <div class="square">
+                              <div class="square black">
+                                <div class="square">
+                                  <div class="square black">
+                                    <div class="square">
+                                      <div class="square black">
+                                        <div class="square">
+                                          <div class="square black">
+                                            <div class="square">
+                                              <div class="square black">
+                                                <div class="square">
+                                                  <div class="square black">
+                                                    <div class="square">
+                                                      <div class="square black">
+                                                        <div class="square">
+                                                          <div
+                                                            class="square black"
+                                                          >
+                                                            <div class="square">
+                                                              <div
+                                                                class="square black"
+                                                              ></div>
+                                                            </div>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
