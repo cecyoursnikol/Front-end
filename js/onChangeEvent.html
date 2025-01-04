@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>onchange Event Example</title>
+</head>
+<body>
+  <h2>Select a Fruit:</h2>
+  <select id="fruitSelect" onchange="handleChange(event)">
+    <option value="Apple">Apple</option>
+    <option value="Banana">Banana</option>
+    <option value="Cherry">Cherry</option>
+    <option value="Date">Date</option>
+  </select>
+
+  <p id="output">Selected fruit will appear here.</p>
+
+  <script>
+    function handleChange(event) {
+      const selectedValue = event.target.value;
+      document.getElementById("output").innerText = `You selected: ${selectedValue}`;
+    }
+  </script>
+</body>
+</html>
