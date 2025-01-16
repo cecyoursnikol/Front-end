@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js EVents</title>
+
+    <style>
+      .result {
+        height: 500px;
+        width: 500px;
+
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="result" onmouseover="hy()" onmouseout="by()"></div>
+
+    <button onclick="hy()">Change</button>
+
+    <select name="xyz" id="list" onchange="chang()">
+
+        <option value="HTML">Hyper Text Markup Lang</option>
+        <option value="Css">Cascading Style Sheets</option>
+    </select>
+
+    <script>
+    //   function hy() {
+    //     alert("Event");
+    //   }
+    //   function by() {
+    //     alert("Mouse Out");
+    //   }
+
+    function chang(){
+
+        alert("Element Changed");
+    }
+
+    
+    </script>
+  </body>
+</html>
