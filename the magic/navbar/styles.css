@@ -1,0 +1,59 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  background: rgb(34, 193, 195);
+  font-family: 'Playwrite Argentina';
+  
+
+
+ 
+}
+
+.navbar{
+
+    height: 80px;
+    width: 100%;
+    border: 1px solid black;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar .logo{
+
+    font-size: 37px;
+    margin: 15px;
+}
+
+.navbar .nav-items{
+
+    padding: 23px;
+}
+
+.navbar .nav-items ul{
+
+list-style: none;
+display: flex;
+gap: 20px;
+
+}
+
+.navbar .nav-items ul li{
+    font-size: 20px;
+
+}
+.navbar .nav-items ul li a{
+
+    text-decoration: none;
+    color: black;
+}
+
+.navbar .nav-items ul li a:hover{
+
+    color: blue;
+}
+.logo:hover{
+    background-color: aliceblue;
+    transition: 0.6s;
+}
