@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Bill Calculator</h1>
+            <p>Easily calculate your bills with discounts and taxes.</p>
+        </header>
+
+        <!-- Add Item Button -->
+        <button class="add-item-btn" onclick="addItem()">
+            <i class="fas fa-plus"></i> Add New Item
+        </button>
+
+        <!-- Items Container -->
+        <div id="items" class="items-container"></div>
+
+        <!-- Discount and Tax Inputs -->
+        <div class="inputs-container">
+            <div class="input-group">
+                <label for="discount"><i class="fas fa-tag"></i> Discount (%)</label>
+                <input type="number" id="discount" placeholder="0" oninput="calculateBill()">
+            </div>
+            <div class="input-group">
+                <label for="tax"><i class="fas fa-percentage"></i> Tax (%)</label>
+                <input type="number" id="tax" placeholder="10" oninput="calculateBill()">
+            </div>
+        </div>
+
+        <!-- Total Amount -->
+        <div class="total-container">
+            <h2>Total Amount</h2>
+            <div class="total-amount">
+                <span id="totalAmount">$0.00</span>
+            </div>
+        </div>
+
+        <!-- Confirmation Message -->
+        <div id="confirmation-message" class="confirmation-message"></div>
+
+        <!-- Bill Summary -->
+        <div id="bill-summary" class="bill-summary"></div>
+
+        <!-- Pay and Clear Buttons -->
+        <div class="actions-container">
+            <button class="pay-btn" onclick="payBill()">
+                <i class="fas fa-credit-card"></i> Pay Now
+            </button>
+            <button class="clear-btn" onclick="clearAll()">
+                <i class="fas fa-trash"></i> Clear All
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

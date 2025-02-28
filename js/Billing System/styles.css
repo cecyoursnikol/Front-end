@@ -1,0 +1,233 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+header p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.add-item-btn {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.add-item-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.items-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.item input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 0.9rem;
+    width: 100%; /* Ensure input fields take full width */
+}
+
+.item input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.item .remove-btn {
+    background: #ff4d4d;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.item .remove-btn:hover {
+    background: #ff1a1a;
+}
+
+.inputs-container {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.total-container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.total-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.total-amount {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 12px;
+}
+
+#totalAmount {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffeb3b;
+}
+
+.confirmation-message {
+    text-align: center;
+    margin-bottom: 15px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: #4caf50;
+}
+
+.bill-summary {
+    margin-bottom: 25px;
+}
+
+.bill-summary p {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.actions-container {
+    display: flex;
+    gap: 15px;
+}
+
+.actions-container button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.pay-btn {
+    background: #4caf50;
+    color: #fff;
+}
+
+.pay-btn:hover {
+    background: #45a049;
+}
+
+.clear-btn {
+    background: #ff4d4d;
+    color: #fff;
+}
+
+.clear-btn:hover {
+    background: #ff1a1a;
+}
+
+/* Flash Animation */
+@keyframes flash {
+    0% { background-color: transparent; }
+    50% { background-color: rgba(255, 235, 59, 0.3); }
+    100% { background-color: transparent; }
+}
+
+.flash {
+    animation: flash 0.5s;
+}
