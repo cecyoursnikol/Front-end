@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle, #1e1e2e, #161621);
+            font-family:  sans-serif;
+            overflow: hidden;
+        }
+
+        .clock {
+            font-size: 80px;
+            font-weight: bold;
+            padding: 40px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            text-align: center;
+            color: #00ffff;
+            border: 2px solid rgba(0, 255, 255, 0.5);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+            }
+            to {
+                box-shadow: 0 0 30px rgba(0, 255, 255, 0.9);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="clock" id="clock">00:00:00</div>
+
+    <script>
+        function update() {
+            let now = new Date();
+            let h = now.getHours();
+            let m = now.getMinutes();
+            let s = now.getSeconds();
+
+            h = h < 10 ? "0" + h : h;
+            m = m < 10 ? "0" + m : m;
+            s = s < 10 ? "0" + s : s;
+
+            document.getElementById("clock").innerText = `${h}:${m}:${s}`;
+        }
+
+        setInterval(update, 1000);
+        update();
+    </script>
+
+</body>
+</html>
