@@ -18,7 +18,7 @@ function calculateBill() {
     let total = 0, summaryHTML = "";
     document.querySelectorAll(".item").forEach((item, index) => {
         let name = item.querySelector(".item-name").value || `Item ${index + 1}`;
-        let price = parseFloat(item.querySelector(".price").value) || 0;
+        let price = parseFloat(item.querySelector(".price").value) || 0; 
         let qty = parseInt(item.querySelector(".quantity").value) || 1;
         let itemTotal = price * qty;
         total += itemTotal;
